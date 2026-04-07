@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="/WEB-INF/views/ex5/common/header.jsp" %>
 
 <h2>Chi tiết nhân viên</h2>
 
@@ -46,7 +46,6 @@
     </div>
 </div>
 
-<%@ include file="/WEB-INF/views/common/footer.jsp" %>
-
+<%@ include file="/WEB-INF/views/ex5/common/footer.jsp" %>
 </body>
 </html>

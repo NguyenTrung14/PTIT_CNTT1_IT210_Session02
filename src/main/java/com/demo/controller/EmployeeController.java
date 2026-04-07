@@ -33,19 +33,19 @@ public class EmployeeController {
 
         model.addAttribute("employees", employeeService.findAll());
         model.addAttribute("technicalTotalSalary", employeeService.getTechnicalDepartmentTotalSalary());
-        return "employees/list";
+        return "ex5/employees/list";
     }
 
     @GetMapping("/{code}")
     public String showEmployeeDetail(@PathVariable("code") String code,
-                                     HttpSession session,
-                                     Model model) {
+            HttpSession session,
+            Model model) {
         if (isNotLoggedIn(session)) {
             return "redirect:/login";
         }
 
         Employee employee = employeeService.findByCode(code);
         model.addAttribute("employee", employee);
-        return "employees/detail";
+        return "ex5/employees/detail";
     }
 }

@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="/WEB-INF/views/ex5/common/header.jsp" %>
 
 <h2>Danh sách nhân viên</h2>
 
@@ -73,7 +73,6 @@
     <fmt:formatNumber value="${technicalTotalSalary}" type="number" groupingUsed="true" /> VNĐ
 </div>
 
-<%@ include file="/WEB-INF/views/common/footer.jsp" %>
-
+<%@ include file="/WEB-INF/views/ex5/common/footer.jsp" %>
 </body>
 </html>

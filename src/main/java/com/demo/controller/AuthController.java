@@ -16,32 +16,29 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String showLoginPage() {
-        return "ex3/login";
+    public String showLogin() {
+        return "ex5/auth/login";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        HttpSession session,
-                        Model model) {
+            @RequestParam("password") String password,
+            HttpSession session,
+            Model model) {
 
-        if ("admin".equals(username) && "admin123".equals(password)) {
-            session.setAttribute("loggedUser", "admin");
-            session.setAttribute("role", "ADMIN");
-            return "redirect:/orders";
+        if ("hr_manager".equals(username) && "hr123".equals(password)) {
+            session.setAttribute("loggedUser", "hr_manager");
+            session.setAttribute("role", "hr_manager");
+            return "redirect:/employees";
         }
 
-        if ("staff".equals(username) && "staff123".equals(password)) {
-            session.setAttribute("loggedUser", "staff");
-            session.setAttribute("role", "STAFF");
-            return "redirect:/orders";
+        if ("hr_staff".equals(username) && "staff456".equals(password)) {
+            session.setAttribute("loggedUser", "hr_staff");
+            session.setAttribute("role", "hr_staff");
+            return "redirect:/employees";
         }
 
-        model.addAttribute("error", "Sai tên đăng nhập hoặc mật khẩu!");
-        return "ex3/login";
+        model.addAttribute("errorMessage", "Tên đăng nhập hoặc mật khẩu không đúng.");
+        return "ex5/auth/login";
     }
-
-    
 }
-

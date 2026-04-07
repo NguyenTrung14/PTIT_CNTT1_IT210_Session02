@@ -11,12 +11,12 @@ public class GlobalExceptionHandler {
     public String handleEmployeeNotFound(EmployeeNotFoundException ex, Model model) {
         model.addAttribute("errorMessage",
                 "Nhân viên [" + ex.getEmployeeCode() + "] không tồn tại trong hệ thống");
-        return "error";
+        return "ex5/error";
     }
 
     @ExceptionHandler(Exception.class)
     public String handleGeneralException(Exception ex, Model model) {
         model.addAttribute("errorMessage", "Đã xảy ra lỗi hệ thống.");
-        return "error";
+        return "ex5/error";
     }
 }
